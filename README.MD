@@ -1,3 +1,3 @@
 # Basic Usage
 
-$informationBlocks = HtmlDocumentInformationBlocksExtractor::extract(file_get_contents('https://github.com/Pherserk/HtmlDocInfoEx'), 128)->getAll();
+var_dump(PeriodSplitter::split("This is your text! \n You can extract significant portions of a period now, are you happy? Let's    go.");
