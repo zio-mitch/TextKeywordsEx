@@ -17,6 +17,10 @@ class PeriodSplitterTest extends \PHPUnit_Framework_TestCase
         self::assertEquals('divided in one or more periods', $periods[2]->getText());
         self::assertEquals('Should it be simplest', $periods[3]->getText());
         self::assertEquals('good luck', $periods[4]->getText());
+
+        self::assertEquals('good', $periods[4]->getKeywords(1)[0]);
+        self::assertEquals('good luck', $periods[4]->getKeywords(2)[0]);
+        self::assertEquals('or more periods', $periods[2]->getKeywords(3)[1]);
     }
 
     public function provideStrings()

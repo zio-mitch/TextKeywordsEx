@@ -3,6 +3,8 @@
 namespace Pherserk\TextKeywordsEx\Model;
 
 
+use Doctrine\Instantiator\Exception\InvalidArgumentException;
+
 class Period
 {
     protected $text;
@@ -17,9 +19,22 @@ class Period
         return $this->text;
     }
 
-    public function getKeywords() : array
+    public function getKeywords(int $size) : array
     {
-        return explode(' ', $this->text);
+        if ($size < 1) {
+            throw new InvalidArgumentException('Size must be positive');
+        }
+
+        $words = explode(' ', $this->text);
+
+        $chunks = array_chunk($words, $size);
+
+        $keywords = [];
+        foreach ($chunks as $chunk) {
+            $keywords[] = implode(' ', $chunk);
+        }
+
+        return $keywords;
     }
 }
 
