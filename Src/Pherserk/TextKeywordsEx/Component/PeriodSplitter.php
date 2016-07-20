@@ -2,8 +2,6 @@
 
 namespace Pherserk\TextKeywordsEx\Component;
 
-use Pherserk\TextKeywordsEx\Model\Period;
-
 class PeriodSplitter
 {
     public static function split(String $string)
@@ -11,13 +9,14 @@ class PeriodSplitter
         $string = preg_replace('/\s+/', ' ', $string);
         $portions = preg_split( "/\s*(\:|\!|\?|\.|\;|\,)\s*/", $string);
 
-        $periods = [];
+        $result = [];
         foreach ($portions as $portion) {
-            if (trim($portion) != '') {
-                $periods[] = new Period($portion);
+            $portion = trim($portion);
+            if ($portion !== '') {
+                $result[] = $portion;
             }
         }
-
-        return $periods;
+        
+        return $result;
     }
 }
