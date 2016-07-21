@@ -9,6 +9,7 @@ Basic usage:
 <?php
 
 $units = PeriodSplitter::split('This is a text, this text will be splitted in units.\n Exactly three units ...excuse me four!')
+
 var_dump($units);
 
 
@@ -21,7 +22,9 @@ Basic usage:
 <?php
 
 $couples = KeywordsExtractor::extract('This text will be divided in couples of keywords', 2);
+
 var_dump($couples);
 
 $triples = KeywordsExtractor::extract('This text will be divided in triples of keywords', 3);
+
 var_dump($triples);
