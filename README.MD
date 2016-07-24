@@ -6,12 +6,13 @@ A period is a portion of text delimited within puntaction and\or generic line br
 
 Basic usage:
 
+```php
 <?php
 
 $units = PeriodSplitter::split('This is a text, this text will be splitted in units.\n Exactly three units ...excuse me four!')
 
 var_dump($units);
-
+```
 
 ## KeywordsExtractor
 The keywords extractor scope is to split a text in word groups, grouped by a given length.
