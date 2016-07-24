@@ -2,3 +2,5 @@ build:
     environment:
         php:
             version: 7.0.0
+            code_rating: true
+            duplication: true
