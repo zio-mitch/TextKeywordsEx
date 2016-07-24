@@ -19,6 +19,7 @@ The best usage is to split a text with the period splitter, and then extract key
 
 Basic usage:
 
+```php
 <?php
 
 $couples = KeywordsExtractor::extract('This text will be divided in couples of keywords', 2);
@@ -28,3 +29,4 @@ var_dump($couples);
 $triples = KeywordsExtractor::extract('This text will be divided in triples of keywords', 3);
 
 var_dump($triples);
+```
